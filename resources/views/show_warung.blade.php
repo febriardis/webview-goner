@@ -1,0 +1,20 @@
+@extends('layouts.layout')
+
+@section('content')
+	<!-- Page container -->
+		@foreach($tabel as $tb)
+		<a href="">
+			<div class="col-sm-4 col-lg-2">
+				<div class="panel">
+					<img src="assets/images/placeholder.jpg" style="width: 100%; max-height: 150px" alt="">
+					<div class="p-15">
+						<div class="media-body">
+							<strong>{{ $tb->nm_warung }}</strong>
+						</div>
+					</div>
+				</div>
+			</div>
+		</a>
+		@endforeach
+	<!-- /page container -->
+@endsection
