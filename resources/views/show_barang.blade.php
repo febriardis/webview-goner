@@ -10,7 +10,7 @@
 	<h3>Daftar Minuman</h3>
 		@foreach($tabel as $tb)
 		<a href="/formtransaksi/{{ Auth::user()->id }}">
-			<div style="width: 160px; float: left; margin:10px">
+			<div style="width: 160px; float: left; margin:0px">
 				<div class="panel">
 					<img src="/assets/images/placeholder.jpg" style="width: 100%; max-height: 120px" alt="">
 					<div class="p-15">

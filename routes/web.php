@@ -12,9 +12,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/cek', function () {return 'woyyyyyyyy';});//--
-
 Route::get('/', function () {return view('Auth.login');})->middleware('guest');//--
 Route::post('/login', 'AuthController@login');
 Route::get('/keluar', 'AuthController@keluar');
