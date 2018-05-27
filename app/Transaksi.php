@@ -16,4 +16,11 @@ class Transaksi extends Model
 	function FKtransaksi() {
 		return $this->belongsTo(User::class);
 	}
+	function FKtransaksi2() {
+		return $this->belongsTo(Barang::class);
+	}
+
+	function hasWarung($role) {
+		return null !== $this->FKtransaksi2()->where('warung_id', $role)->first();
+	}
 }

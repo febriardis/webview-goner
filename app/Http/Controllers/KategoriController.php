@@ -14,21 +14,24 @@ class KategoriController extends Controller
 	}
 	
 	public function viewTambah(){
-		$tabel = Kategori::all();
-		return view('show_home') //response()->json(Kategori::all());
-		->with('tbl', $tabel);
+		return view('tambah_kategori'); //response()->json(Kategori::all());
 	}
 
+	public function insert(Request $req){
+		Kategori::create($req->all());
+		return redirect('/tambahkankategori')
+		->with('pesan', 'Kategori Berhasil Ditambahkan');
+	}
 
 	//==========================================
 
 	public function find($id){
 		return response()->json(Kategori::find($id));
 	}
-	public function insert(Request $req){
-		Kategori::create($req->all());
-		return response()->json('Data Berhasil Disimpan', 200);
-	}
+	// public function insert(Request $req){
+	// 	Kategori::create($req->all());
+	// 	return response()->json('Data Berhasil Disimpan', 200);
+	// }
 	public function update(Request $req, $id){
 		$tb = Kategori::findOrFail($id)->update($req->all());
 		return response()->json('Data Berhasil Diupdate', 200);

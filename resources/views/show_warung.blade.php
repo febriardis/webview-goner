@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('btback')
+	<a href="/home"><i class="icon-arrow-left8"></i> </a>
+@endsection
+
 @section('content')
 	<!-- Page container -->
 		@foreach($tabel as $tb)

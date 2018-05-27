@@ -1,5 +1,7 @@
 <?php
 
+//use App\Transaksi;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,11 +27,22 @@ Route::get('/barang/{id}', 'BarangController@show')->middleware('auth:users');
 Route::get('/tambahkanwarung', 'WarungController@viewTambah')->middleware('auth:users');
 Route::post('/tambahwarung', 'WarungController@insert');
 //================================================================
-Route::get('/tambahkankategori', 'KategoriController@viewTambah');
+Route::get('/tambahkankategori', 'KategoriController@viewTambah')->middleware('auth:users');
 Route::post('/tambahkategori', 'KategoriController@insert');
 //================================================================
 Route::get('/tambahkanbarang', 'BarangController@viewTambah')->middleware('auth:users');
 Route::post('/tambahbarang', 'BarangController@insert');
+//================================================================
+Route::get('/formtransaksi/{id}', 'TransaksiController@formTrans')->middleware('auth:users');
+Route::post('/tambahtransaksi', 'TransaksiController@simpanTrans');
+
+// Route::get('/coba',function(){	$data = Transaksi::all();
+//return view('coba')->with('val',$data);});
+
+
+
+
+
 
 //==========================USET====================================
 Route::get('/showuser', 'AuthController@show');

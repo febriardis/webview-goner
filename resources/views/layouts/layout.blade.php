@@ -106,6 +106,8 @@
 									<!-- Main -->
 									<li class="navigation-header"><span>Manage Warung</span> <i class="icon-menu" title="Main pages"></i></li>
 									<li><a href="/tambahkanbarang"><i class="icon-cog3"></i> <span>Tambah Barang</span></a></li>
+									<li><a href="/tambahkanbarang"><i class="icon-cog3"></i> <span>Tabel Penjualan</span></a></li>
+									<li><a href="/tambahkanbarang"><i class="icon-cog3"></i> <span>Tabel Pembeli</span></a></li>
 								</ul>
 								@else
 									<li><a href="/tambahkanwarung"><i class="icon-store2"></i><span>Buka Warung</span></a></li>

@@ -4,20 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaksi;
+use App\Barang;
 
 class TransaksiController extends Controller
 {    
-	/**
-    * Create a new controller instance.
-    *
-    * @return void
-    */
-    
-    public function __construct()
-    {
-        //
-    }
-	
+	public function formTrans($id){
+		$tb = Barang::find($id);
+		return view('form_transaksi')
+		->with('tbBarang', $tb);
+	}
+
+	public function simpanTrans(Request $req){
+		Transaksi::create($req->all());
+	}
+
+	//=============================================
 	public function showall(){
 		return response()->json(Transaksi::all());
 	}

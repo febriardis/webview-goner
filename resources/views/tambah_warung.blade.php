@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('btback')
+	<a href="/home"><i class="icon-arrow-left8"></i> </a>
+@endsection
+
 @section('content')
 <div style="width: 80%; margin: 0px auto">
 	<h3>Form Pendaftaran Warung</h3>
