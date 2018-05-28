@@ -18,6 +18,7 @@ class TbBarang extends Migration
             $table->unsignedInteger('warung_id');
             $table->unsignedInteger('kategori_id');
             $table->string('nm_barang');
+            $table->string('foto');
             $table->string('desk_barang');
             $table->string('harga');
             $table->rememberToken();

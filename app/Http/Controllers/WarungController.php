@@ -15,17 +15,33 @@ class WarungController extends Controller
 	}	
 
 	public function viewTambah(){
-		//$tabel = Kategori::all();
 		return view('tambah_warung'); //response()->json(Kategori::all());
-		//->with('tbl', $tabel);
 	}
 	public function insert(Request $req){
-		Warung::create($req->all());
-		
-		return redirect('/tambahkanwarung')
+		//Warung::create($req->all());
+		$tb              = new Warung;
+		$tb->user_id     = $req->user_id;
+		$tb->nm_warung   = $req->nm_warung;
+
+		$file = $req->file('foto');
+        $ext  = $file->getClientOriginalExtension();
+        $newName = rand(100000,1001238912).".".$ext;
+        $file->move('uploads/file',$newName);
+       
+		$tb->foto 	     = $newName;
+		$tb->hp_warung 	 = $req->hp_warung;
+		$tb->almt_warung = $req->almt_warung;
+		$tb->deskripsi   = $req->deskripsi;
+		$tb->save();
+
+		return redirect('/tabelpenjualan')
 		->with('pesan', 'berhasil ditambahkan');
 	}
 
+	public function delete($userId){
+		Warung::findOrFail($userId)->delete();
+		return redirect('/home');
+	}
 	/////////////////////////////////////////////////////////
 
 	public function find($id){
@@ -39,16 +55,8 @@ class WarungController extends Controller
 		$tb = Warung::findOrFail($id)->update($req->all());
 		return response()->json('Data Berhasil Diupdate', 200);
 	}
-	public function delete($id){
-		Warung::findOrFail($id)->update($req->all());
-		return response()->json('Data Berhasil Dihapus', 200);
-	}
+	// public function delete($id){
+	// 	Warung::findOrFail($id)->delete();
+	// 	return response()->json('Data Berhasil Dihapus', 200);
+	// }
 }
-
-//$tb = new Warung;
-//$tb->nm_warung = $req->input('nm_warung');
-//$tb->hp_warung = $req->input('hp_warung');
-//$tb->almt_warung = $req->input('almt_warung');
-//$tb->lokasi = $req->input('lokasi');
-//$tb->deskripsi = $req->input('deskripsi');
-//$tb->save();

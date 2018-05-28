@@ -9,7 +9,7 @@
   				{{ Session::get('pesan') }} !
 			</div>
 		@endif
-		@if(Session::has('pesan'))
+		@if(Session::has('pesanberhasil'))
 			<div class="alert alert-info">
   				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   				{{ Session::get('pesanberhasil') }} !
@@ -22,7 +22,7 @@
 				<div class="col-lg-10">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="icon-user"></i></span>
-						<input type="email" name="email" class="form-control" placeholder="mymail@mail.xx">
+						<input type="email" name="email" class="form-control" required="required" placeholder="mymail@mail.xx">
 					</div>
 				</div>
 			</div>
@@ -31,7 +31,7 @@
 				<div class="col-lg-10">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="icon-lock2"></i></span>
-						<input type="password" name="password" class="form-control" placeholder="">
+						<input type="password" name="password" class="form-control" required="required" placeholder="">
 					</div>
 				</div>
 			</div>

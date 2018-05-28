@@ -14,10 +14,10 @@
 		</div>
 	@endif
 
-	<form action="/tambahwarung" method="POST" class="form-horizontal form-validate-jquery">
+	<form action="/tambahwarung" method="POST" enctype="multipart/form-data" class="form-horizontal form-validate-jquery" >
 		{{ csrf_field() }}
 		<div style="display: none;">
-			<input type="text" name="user_id" value="{{ Auth::user()->id }}">
+			<input type="text" name="user_id" readonly value="{{ Auth::user()->id }}">
 		</div>
 		<div class="form-group">
 			<label class="control-label col-lg-2">Nama Warung</label>
@@ -25,7 +25,13 @@
 				<input type="text" class="form-control" name="nm_warung" placeholder="nama barang">
 			</div>
 		</div>
-
+		<div class="form-group">
+			<label class="control-label col-lg-2">Gambar Warung:</label>
+			<div class="col-lg-10">
+				<input type="file" name="foto" class="file-styled">
+				<span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
+			</div>
+		</div>
 		<div class="form-group">
 			<label class="control-label col-lg-2">Contact Warung</label>
 			<div class="col-lg-10">

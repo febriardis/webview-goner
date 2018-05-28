@@ -20,17 +20,23 @@ Route::post('/register', 'AuthController@regist');
 //=================================================================
 Route::get('/home', 'KategoriController@showall')->middleware('auth:users'); //--
 Route::get('/warung', 'WarungController@showall')->middleware('auth:users');
-Route::get('/kategori','KategoriController@showall')->middleware('auth:users');; //--
+Route::get('/barangwarung/{idWarung}', 'BarangController@showBarangWarung')->middleware('auth:users');
 Route::get('/barang/{id}', 'BarangController@show')->middleware('auth:users');
+Route::get('/kategori','KategoriController@showall')->middleware('auth:users');; //--
 //================================================================
 Route::get('/tambahkanwarung', 'WarungController@viewTambah')->middleware('auth:users');
 Route::post('/tambahwarung', 'WarungController@insert');
+Route::get('/hapuswarung/{userid}', 'WarungController@delete');
 //================================================================
 Route::get('/tambahkankategori', 'KategoriController@viewTambah')->middleware('auth:users');
 Route::post('/tambahkategori', 'KategoriController@insert');
 //================================================================
+Route::get('/tabelpenjualan/{idUser}', 'BarangController@showTabelBarangWarung')->middleware('auth:users');
 Route::get('/tambahkanbarang', 'BarangController@viewTambah')->middleware('auth:users');
 Route::post('/tambahbarang', 'BarangController@insert');
+Route::get('/editbarang/{id}', 'BarangController@viewEdit')->middleware('auth:users');
+Route::post('/updatebarang/{id}', 'BarangController@update');
+Route::get('/hapusbarang/{id}', 'BarangController@delete');
 //================================================================
 Route::get('/formtransaksi/{id}', 'TransaksiController@formTrans')->middleware('auth:users');
 Route::post('/tambahtransaksi', 'TransaksiController@simpanTrans');
@@ -50,11 +56,11 @@ Route::get('/hapususer/{id}', 'AuthController@delete');
 //Route::post('/login', 'AuthController@login');
 //==========================WARUNG==================================
 
-Route::get('/showwarung', 'WarungController@showall');
-Route::get('/findwarung/{id}', 'WarungController@find');
-//Route::post('/tambahwarung', 'WarungController@insert');
-Route::put('/updatewarung/{id}', 'WarungController@update');
-Route::get('/hapuswarung/{id}', 'WarungController@delete');
+// Route::get('/showwarung', 'WarungController@showall');
+// Route::get('/findwarung/{id}', 'WarungController@find');
+// //Route::post('/tambahwarung', 'WarungController@insert');
+// Route::put('/updatewarung/{id}', 'WarungController@update');
+// Route::get('/hapuswarung/{id}', 'WarungController@delete');
 //==========================KATEGORI================================
 Route::get('/showkategori', 'KategoriController@showall');
 Route::get('/findkategori/{id}', 'KategoriController@find');
@@ -62,9 +68,9 @@ Route::get('/findkategori/{id}', 'KategoriController@find');
 Route::put('/updatekategori/{id}', 'KategoriController@update');
 Route::get('/hapuskategori/{id}', 'KategoriController@delete');
 //==========================BARANG==================================
-Route::get('/showbarang', 'KategoriController@showall');
-Route::get('/findbarang/{id}', 'KategoriController@find');
-//Route::post('/tambahbarang', 'KategoriController@insert');
-Route::put('/updatebarang/{id}', 'KategoriController@update');
-Route::get('/hapusbarang/{id}', 'KategoriController@delete');
+// Route::get('/showbarang', 'KategoriController@showall');
+// Route::get('/findbarang/{id}', 'KategoriController@find');
+// //Route::post('/tambahbarang', 'KategoriController@insert');
+// Route::put('/updatebarang/{id}', 'KategoriController@update');
+// Route::get('/hapusbarang/{id}', 'KategoriController@delete');
 //================================================================

@@ -7,22 +7,23 @@
 @section('content')
 <div style="width: 80%; margin: 0px auto">
 	{{! $cekWr = (App\Warung::where('user_id', Auth::user()->id))->first() }}
-	<h3>Form Tambah Barang Jualan {{ $cekWr->nm_warung }}</h3>
+	<h3>Form Edit Barang Jualan {{ $cekWr->nm_warung }}</h3>
 	@if(Session::has('pesan'))
 		<div class="alert alert-info">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			{{ Session::get('pesan') }} !
 		</div>
 	@endif
-	<form action="/tambahbarang" method="POST" enctype="multipart/form-data" class="form-horizontal form-validate-jquery">
+	<form action="/updatebarang/{{ $tbBar->id }}" method="POST" enctype="multipart/form-data" class="form-horizontal form-validate-jquery">
 		{{ csrf_field() }}
+		<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 		<input type="hidden" name="warung_id" value="{{ $cekWr->id }}">
 		
 		<div class="form-group">
 			<label class="control-label col-lg-2">Kategori</label>
 			<div class="col-lg-10">
-				<select data-placeholder="Pilih Kategori" name="kategori_id" required="" class="select">
-					<option></option>
+				<select data-placeholder="Pilih Kategori" name="kategori_id" class="select">
+					<option>{{ $tbBar->kategori_id }}</option>
 					@foreach($tbKat as $tb)
 					<option value="{{ $tb->id }}">{{ $tb->nm_kategori }}</option>
 					@endforeach
@@ -33,14 +34,14 @@
 		<div class="form-group">
 			<label class="control-label col-lg-2">Nama Barang</label>
 			<div class="col-lg-10">
-				<input type="text" class="form-control" name="nm_barang" required="" placeholder="">
+				<input type="text" class="form-control" name="nm_barang" value="{{ $tbBar->nm_barang }}" required="" placeholder="">
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label class="control-label col-lg-2">Gambar Barang:</label>
 			<div class="col-lg-10">
-				<input type="file" name="foto" class="file-styled" required="">
+				<input type="file" name="foto" class="file-styled">
 				<span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
 			</div>
 		</div>
@@ -48,7 +49,7 @@
 		<div class="form-group">
 			<label class="control-label col-lg-2">Deskripsi Barang</label>
 			<div class="col-lg-10">
-				<textarea class="form-control" name="desk_barang" required="" rows="3"></textarea>
+				<textarea class="form-control" name="desk_barang" rows="3">{{ $tbBar->desk_barang }}</textarea>
 			</div>
 		</div>
 		<div class="form-group">
@@ -56,7 +57,7 @@
 			<div class="col-lg-10">
 				<div class="input-group">
 					<span class="input-group-addon"><b>Rp</b></span>
-					<input type="number" class="form-control" required="" name="harga">
+					<input type="number" class="form-control" name="harga" value="{{ $tbBar->harga }}">
 				</div>
 			</div>
 		</div>

@@ -17,6 +17,7 @@ class TbWarung extends Migration
             $table->increments('id');
             $table->unsignedInteger ('user_id'); //foreign key
             $table->string('nm_warung');
+            $table->string('foto');
             $table->string('hp_warung');
             $table->string('almt_warung');
             $table->text('deskripsi');

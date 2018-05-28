@@ -8,10 +8,11 @@ use App\Barang;
 
 class TransaksiController extends Controller
 {    
-	public function formTrans($id){
+	public function formTrans(Request $req, $id){
 		$tb = Barang::find($id);
 		return view('form_transaksi')
-		->with('tbBarang', $tb);
+		->with('tbBarang', $tb)
+		->with('req', $req);
 	}
 
 	public function simpanTrans(Request $req){

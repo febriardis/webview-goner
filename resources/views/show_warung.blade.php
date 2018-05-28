@@ -7,7 +7,7 @@
 @section('content')
 	<!-- Page container -->
 		@foreach($tabel as $tb)
-		<a href="">
+		<a href="/barangwarung/{{ $tb->id }}">
 			<div class="col-sm-4 col-lg-2">
 				<div class="panel">
 					<img src="assets/images/placeholder.jpg" style="width: 100%; max-height: 150px" alt="">

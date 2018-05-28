@@ -37,6 +37,21 @@
 		<script type="text/javascript" src="/assets/js/plugins/forms/selects/select2.min.js"></script>
 		<script type="text/javascript" src="/assets/js/pages/form_layouts.js"></script>
 		<!-- /theme JS files -->
+		<style type="text/css">
+			.form-control-plaintext {
+			  display: block;
+			  width: 100%;
+			  padding-top: 0.375rem;
+			  padding-bottom: 0.375rem;
+			  margin-bottom: 0;
+			  line-height: 1.5;
+			  color: #212529;
+			  background-color: transparent;
+			  border: solid transparent;
+			  border-width: 1px 0;
+			} 
+		</style>
+
 
 	</head>
 
@@ -79,7 +94,7 @@
 					<div class="sidebar-user" style="background-color: #4DB6AC">
 						<div class="category-content">
 							<div class="media">
-								<a href="#" class="media-left"><img src="assets/images/placeholder.jpg" class=" img-sm" alt=""></a>
+								<a href="#" class="media-left"><img src="/assets/images/placeholder.jpg" class=" img-sm" alt=""></a>
 								<div class="media-body">
 									<span class="media-heading text-semibold">{{ Auth::user()->nama }}</span>
 									<span class="media-heading text-size-mini">{{ Auth::user()->email }}</span>
@@ -105,9 +120,19 @@
 								<ul class="navigation navigation-main navigation-accordion">
 									<!-- Main -->
 									<li class="navigation-header"><span>Manage Warung</span> <i class="icon-menu" title="Main pages"></i></li>
-									<li><a href="/tambahkanbarang"><i class="icon-cog3"></i> <span>Tambah Barang</span></a></li>
-									<li><a href="/tambahkanbarang"><i class="icon-cog3"></i> <span>Tabel Penjualan</span></a></li>
-									<li><a href="/tambahkanbarang"><i class="icon-cog3"></i> <span>Tabel Pembeli</span></a></li>
+									<li><a href="/tambahkanbarang"><i class="icon-add"></i><span>Tambah Barang</span></a></li>
+									<li><a href="/tabelpenjualan/{{ Auth::user()->id }}"><i class="icon-coin-dollar"></i> <span>Tabel Penjualan</span></a></li>
+									<li><a href="/tambahkanbarang"><i class="icon-cash3"></i> <span class="badge bg-warning-400">2</span> <span>Tabel Pembeli</span></a></li>
+									<li><a href="/hapuswarung/{{ Auth::user()->id }}" onclick="return ConfirmDelete()"><i class="icon-subtract"></i> <span>Hapus Warung</span></a></li>
+									<script>
+									  	function ConfirmDelete() {
+									  		var x = confirm("Yakin Akan Menghapus Warung?");
+									  		if (x)
+									    		return true;
+									  		else
+									    		return false;
+									  	}
+									</script>
 								</ul>
 								@else
 									<li><a href="/tambahkanwarung"><i class="icon-store2"></i><span>Buka Warung</span></a></li>

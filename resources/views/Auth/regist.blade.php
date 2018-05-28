@@ -26,7 +26,7 @@
 				<label class="control-label col-lg-2">Email</label>
 				<div class="col-lg-10">
 					<div class="input-group">
-						<span class="input-group-addon"><i class="icon-user"></i></span>
+						<span class="input-group-addon"><i class="icon-mail5"></i></span>
 						<input type="email" name="email" class="form-control" placeholder="mymail@mail.xx">
 					</div>
 				</div>
@@ -35,7 +35,7 @@
 				<label class="control-label col-lg-2">No Hp</label>
 				<div class="col-lg-10">
 					<div class="input-group">
-						<span class="input-group-addon"><i class="icon-user"></i></span>
+						<span class="input-group-addon"><i class="icon-phone2"></i></span>
 						<input type="number" name="no_hp" class="form-control" placeholder="" required="">
 					</div>
 				</div>

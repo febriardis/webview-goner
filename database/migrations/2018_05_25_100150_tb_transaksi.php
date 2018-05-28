@@ -17,7 +17,9 @@ class TbTransaksi extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('barang_id');
-            $table->datetime('waktu');
+            $table->string('kirim_ke');
+            $table->string('jum_orderan');
+            $table->string('nominal');
             $table->string('status');
             $table->rememberToken();
             $table->timestamps();
