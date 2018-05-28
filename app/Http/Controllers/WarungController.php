@@ -23,7 +23,7 @@ class WarungController extends Controller
 		$tb->user_id     = $req->user_id;
 		$tb->nm_warung   = $req->nm_warung;
 
-		if (count($req->foto)==0) {
+		if ($req->foto==null) {
 			$tb->foto 	     = '';
 			$tb->hp_warung 	 = $req->hp_warung;
 			$tb->almt_warung = $req->almt_warung;
