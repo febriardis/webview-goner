@@ -6,6 +6,8 @@
 
 @section('content')
 	<!-- Page container -->
+	<div style="text-align: center;"><img src="/images/icon-goner-blue.png" style="width: 60%;"></div>
+	<legend class="text-bold"><h4>Kategori Menu</h4></legend>
 		@foreach($tbl as $tb)
 		<a href="/barang/{{ $tb->id }}">
 			<div class="col-sm-4 col-lg-2">

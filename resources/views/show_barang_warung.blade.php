@@ -1,12 +1,12 @@
 @extends('layouts.layout')
 
 @section('btback')
-	<a href="/home"><i class="icon-arrow-left8"></i> </a>
+	<a href="/warung"><i class="icon-arrow-left8"></i> </a>
 @endsection
 
 @section('content')
+	<div style="text-align: center;"><img src="/images/icon-goner-blue.png" style="width: 60%;"></div>
 	<legend class="text-bold"><h4>Menu Warung</h4></legend>
-	
 		<div class="panel">
 			<img src="/assets/images/placeholder.jpg" style="width: 100%; max-height: 150px" alt="">
 			<div class="p-15">
