@@ -6,7 +6,8 @@
 
 @section('content')
 	<div style="text-align: center;"><img src="/images/icon-goner-blue.png" style="width: 60%;"></div>
-	<legend class="text-bold"><h4>Menu Warung</h4></legend>
+	<h3>Daftar Menu Warung</h3>
+	<hr>
 		<div class="panel">
 			<img src="/assets/images/placeholder.jpg" style="width: 100%; max-height: 150px" alt="">
 			<div class="p-15">

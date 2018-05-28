@@ -8,6 +8,7 @@
 	<!-- Page container -->
 	<div style="text-align: center;"><img src="/images/icon-goner-blue.png" style="width: 60%;"></div>
 	<h3>Daftar Menu</h3>
+	<hr>
 		@foreach($tabel as $tb)
 		<!--<a href="/formtransaksi/{{ Auth::user()->id }}">-->
 			<div style="width: 160px; float: left; margin:0px">
