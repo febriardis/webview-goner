@@ -81,7 +81,7 @@ class BarangController extends Controller
 		$tb->kategori_id = $req->kategori_id;
 		$tb->nm_barang   = $req->nm_barang;
 
-	if (count($req->foto)==0) {
+	if ($req->foto==null) {
 		$tb->desk_barang = $req->desk_barang;
 		$tb->harga       = $req->harga;
 		$tb->save();
