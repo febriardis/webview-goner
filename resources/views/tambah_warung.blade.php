@@ -22,7 +22,7 @@
 		<div class="form-group">
 			<label class="control-label col-lg-2">Nama Warung</label>
 			<div class="col-lg-10">
-				<input type="text" class="form-control" name="nm_warung" required="" placeholder="nama barang">
+				<input type="text" class="form-control" name="nm_warung" required="" placeholder="">
 			</div>
 		</div>
 		<div class="form-group">
@@ -35,7 +35,7 @@
 		<div class="form-group">
 			<label class="control-label col-lg-2">Contact Warung</label>
 			<div class="col-lg-10">
-				<input type="text" class="form-control" name="hp_warung" required="" placeholder="nama barang">
+				<input type="number" class="form-control" name="hp_warung" required="" placeholder="">
 			</div>
 		</div>
 		<div class="form-group">

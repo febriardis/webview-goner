@@ -15,7 +15,7 @@
 		<div class="form-group">
 			<label class="control-label col-lg-2">Nama Kategori</label>
 			<div class="col-lg-10">
-				<input type="text" class="form-control" name="nm_kategori" placeholder="" required="required">
+				<input type="text" class="form-control" name="nm_kategori" placeholder="" required="">
 			</div>
 		</div>
 		<div class="text-right">

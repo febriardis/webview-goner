@@ -6,11 +6,26 @@
 
 @section('content')
 	<legend class="text-bold"><h4>Menu Warung</h4></legend>
-	<!-- Page container -->
+	
+		<div class="panel">
+			<img src="/assets/images/placeholder.jpg" style="width: 100%; max-height: 150px" alt="">
+			<div class="p-15">
+				<div class="media-body">
+					<div style="float: left;">
+						<strong>{{ $tbWarung->nm_warung }}</strong>
+						<p><i class="icon-pin"></i> {{ $tbWarung->almt_warung }}</p>
+					</div>
+					<div style="float: right;">
+						<p><b>Cp</b> : {{ $tbWarung->hp_warung }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		@foreach($tabel as $tb)
 			<div style="width: 160px; float: left; margin:0px">
 				<div class="panel">
-					<img src="/assets/images/placeholder.jpg" style="width: 100%; max-height: 120px" alt="">
+					<img src="{{ url('uploads/file/'.$tb->foto) }}" style="width: 100%; height: 100px" alt="">
 					<div class="p-15">
 						<div class="media-body">
 							<strong>{{ $tb->nm_barang }}</strong>

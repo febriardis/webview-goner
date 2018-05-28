@@ -40,14 +40,15 @@ class WarungController extends Controller
 			$tb->almt_warung = $req->almt_warung;
 			$tb->deskripsi   = $req->deskripsi;
 			$tb->save();
-		}
 
-		return redirect('/tabelpenjualan')
-		->with('pesan', 'berhasil ditambahkan');
+		}
+		return redirect()->action('BarangController@showTabelBarangWarung', ['idUser' => $req->user_id])
+		->with('pesan', 'berhasil membuka warung');
 	}
 
 	public function delete($userId){
-		Warung::findOrFail($userId)->delete();
+		$tb = Warung::where('user_id', $userId);
+		$tb->delete();
 		return redirect('/home');
 	}
 	/////////////////////////////////////////////////////////

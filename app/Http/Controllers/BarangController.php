@@ -18,8 +18,10 @@ class BarangController extends Controller
 
 	public function showBarangWarung($warungId) {
 		$tabel = Barang::where('warung_id', $warungId)->get();
+		$tbWar = Warung::find($warungId);
 
 		return view('show_barang_warung')
+		->with('tbWarung', $tbWar)
 		->with('tabel', $tabel);
 	}
 

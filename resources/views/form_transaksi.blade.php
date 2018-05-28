@@ -20,13 +20,14 @@
 			</div>
 			
 			<div class="panel-body">
-				<div style="float: left; margin-top: -40px">
+				<div style="float: left; margin-top: -10px; margin-bottom: -50px">
+					<img src="{{ url('uploads/file/'.$tbBarang->foto) }}" style="float: left; margin-right: 20px; width: 30%; height: 70px" alt="">
 					<h3>{{ $tbBarang->nm_barang }}</h3>
 					<p>{{ $tbBarang->desk_barang }}</p>
 				</div>
 				<div style="float: right; margin-top: 45px">
 				{{! $jum_str = preg_replace("/[^0-9]/", "", $tbBarang->harga) }}
-		    	<h4>Rp. {{ number_format($jum_str,0 , "," , ".") }}</h4>
+		    	<h4><b>Rp. {{ number_format($jum_str,0 , "," , ".") }}</b></h4>
 				</div>
 			</div>
 		</div>

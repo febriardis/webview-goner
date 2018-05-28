@@ -27,7 +27,7 @@
 				<div class="col-lg-10">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="icon-mail5"></i></span>
-						<input type="email" name="email" class="form-control" placeholder="mymail@mail.xx">
+						<input type="email" name="email" class="form-control" required="" placeholder="mymail@mail.xx">
 					</div>
 				</div>
 			</div>
@@ -44,7 +44,7 @@
 			<div class="form-group">
 				<label class="control-label col-lg-2">Alamat</label>
 				<div class="col-lg-10">
-						<textarea class="form-control" name="alamat" rows="4"></textarea>
+						<textarea class="form-control" name="alamat" rows="4" required=""></textarea>
 				</div>
 			</div>
 
@@ -53,7 +53,7 @@
 				<div class="col-lg-10">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="icon-lock2"></i></span>
-						<input type="password" name="password" class="form-control" placeholder="">
+						<input type="password" name="password" class="form-control" required="" placeholder="">
 					</div>
 				</div>
 			</div>

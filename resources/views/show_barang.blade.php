@@ -7,12 +7,12 @@
 @section('content')
 	<!-- Page container -->
 	<div style="text-align: center;"><img src="/images/icon-goner-blue.png" style="width: 60%;"></div>
-	<h3>Menu Goner</h3>
+	<h3>Daftar Menu</h3>
 		@foreach($tabel as $tb)
 		<!--<a href="/formtransaksi/{{ Auth::user()->id }}">-->
 			<div style="width: 160px; float: left; margin:0px">
 				<div class="panel">
-					<img src="/assets/images/placeholder.jpg" style="width: 100%; max-height: 120px" alt="">
+					<img src="{{ url('uploads/file/'.$tb->foto) }}" style="width: 100%; height: 100px" alt="">
 					<div class="p-15">
 						<div class="media-body">
 							<strong>{{ $tb->nm_barang }}</strong>
