@@ -22,32 +22,32 @@
 		<div class="form-group">
 			<label class="control-label col-lg-2">Nama Warung</label>
 			<div class="col-lg-10">
-				<input type="text" class="form-control" name="nm_warung" placeholder="nama barang">
+				<input type="text" class="form-control" name="nm_warung" required="" placeholder="nama barang">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label col-lg-2">Gambar Warung:</label>
 			<div class="col-lg-10">
-				<input type="file" name="foto" class="file-styled">
+				<input type="file" name="foto" class="file-styled" required="">
 				<span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label col-lg-2">Contact Warung</label>
 			<div class="col-lg-10">
-				<input type="text" class="form-control" name="hp_warung" placeholder="nama barang">
+				<input type="text" class="form-control" name="hp_warung" required="" placeholder="nama barang">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label col-lg-2">Alamat Warung</label>
 			<div class="col-lg-10">
-				<textarea name="almt_warung" class="form-control" rows="3"></textarea>
+				<textarea name="almt_warung" class="form-control" required="" rows="3"></textarea>
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label col-lg-2">Deskripsi Warung</label>
 			<div class="col-lg-10">
-				<textarea name="deskripsi" class="form-control" rows="3"></textarea>
+				<textarea name="deskripsi" class="form-control" required="" rows="3"></textarea>
 			</div>
 		</div>
 		<div class="text-right">

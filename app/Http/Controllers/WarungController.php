@@ -23,16 +23,24 @@ class WarungController extends Controller
 		$tb->user_id     = $req->user_id;
 		$tb->nm_warung   = $req->nm_warung;
 
-		$file = $req->file('foto');
-        $ext  = $file->getClientOriginalExtension();
-        $newName = rand(100000,1001238912).".".$ext;
-        $file->move('uploads/file',$newName);
-       
-		$tb->foto 	     = $newName;
-		$tb->hp_warung 	 = $req->hp_warung;
-		$tb->almt_warung = $req->almt_warung;
-		$tb->deskripsi   = $req->deskripsi;
-		$tb->save();
+		if (count($req->foto)==0) {
+			$tb->foto 	     = '';
+			$tb->hp_warung 	 = $req->hp_warung;
+			$tb->almt_warung = $req->almt_warung;
+			$tb->deskripsi   = $req->deskripsi;
+			$tb->save();
+		}else{
+			$file = $req->file('foto');
+	        $ext  = $file->getClientOriginalExtension();
+	        $newName = rand(100000,1001238912).".".$ext;
+	        $file->move('uploads/file',$newName);
+	       
+			$tb->foto 	     = $newName;
+			$tb->hp_warung 	 = $req->hp_warung;
+			$tb->almt_warung = $req->almt_warung;
+			$tb->deskripsi   = $req->deskripsi;
+			$tb->save();
+		}
 
 		return redirect('/tabelpenjualan')
 		->with('pesan', 'berhasil ditambahkan');

@@ -14,6 +14,7 @@
 					<div class="p-15">
 						<div class="media-body">
 							<strong>{{ $tb->nm_warung }}</strong>
+							<p>CP Warung {{ $tb->hp_warung }}</p>
 						</div>
 					</div>
 				</div>
