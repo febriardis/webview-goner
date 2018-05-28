@@ -16,7 +16,6 @@ class TransaksiController extends Controller
 	}
 
 	public function simpanTrans(Request $req){
-		
 		Transaksi::create($req->all());
 	}
 

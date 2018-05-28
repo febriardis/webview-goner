@@ -10,7 +10,9 @@ class Transaksi extends Model
 	protected $fillable = [
 		'user_id', 
 		'barang_id',
-		'waktu',
+		'kirim_ke',
+		'jum_orderan',
+		'nominal',
 		'status',
 	];
 	function FKtransaksi() {

@@ -10,6 +10,7 @@ class Warung extends Model
 	protected $fillable = [
 		'user_id',
 		'nm_warung', 
+		'foto',
 		'hp_warung',
 		'almt_warung',
 		'deskripsi',
