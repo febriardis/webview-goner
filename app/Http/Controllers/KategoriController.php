@@ -10,8 +10,10 @@ class KategoriController extends Controller
 {    
 	public function showinHome() {
 		$tabel = Kategori::all();
+		$tbBarang = Barang::inRandomOrder()->first();
 		return view('show_home') //response()->json(Kategori::all());
-		->with('tbkat', $tabel);
+		->with('tbkat', $tabel)		
+		->with('gmbr', $tbBarang);
 	}
 
 	public function showallkat(){

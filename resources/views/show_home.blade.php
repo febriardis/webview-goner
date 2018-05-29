@@ -19,11 +19,10 @@
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">
 	    <div class="item active">
-	    	{{ $getGmbr = (App\Barang::inRandomOrder()->limit(1)->first()) }}</div>
-	    	@if(!$getGmbr)
+	    	@if(!$gmbr)
            		<img src="/images/ban1.jpg" style="width: 100%; height: 200px" alt="">
            	@else
-           		<img src="{{ url('uploads/file/'.$getGmbr->foto) }}" style="width: 100%; height: 200px" alt="">
+           		<img src="{{ url('uploads/file/'.$gmbr->foto) }}" style="width: 100%; height: 200px" alt="">
        		@endif
 	      	<div class="carousel-caption">
 	      		<div style="background: #fafafa;color: #000"><h4>Pesan disini sekarang!</h4></div>
