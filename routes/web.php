@@ -18,31 +18,37 @@ Route::get('/keluar', 'AuthController@keluar');
 Route::get('/register', function () {return view('Auth.regist');})->middleware('guest');//--
 Route::post('/register', 'AuthController@regist');
 //=================================================================
-Route::get('/home', 'KategoriController@showall')->middleware('auth:users'); //--
-Route::get('/warung', 'WarungController@showall')->middleware('auth:users');
-Route::get('/barangwarung/{idWarung}', 'BarangController@showBarangWarung')->middleware('auth:users');
-Route::get('/barang/{id}', 'BarangController@show')->middleware('auth:users');
-Route::get('/kategori','KategoriController@showall')->middleware('auth:users');; //--
+Route::get('/home', 'KategoriController@showall')->middleware('auth:users'); //--pembeli
+Route::get('/warung', 'WarungController@showall')->middleware('auth:users'); //--pembeli
+Route::get('/barangwarung/{idWarung}', 'BarangController@showBarangWarung')->middleware('auth:users'); //--pembeli
+Route::get('/barang/{id}', 'BarangController@show')->middleware('auth:users'); //--pembeli
+Route::get('/kategori','KategoriController@showall')->middleware('auth:users'); //--pembeli
+Route::get('/tabelpesanan/{userid}','TransaksiController@showPesanan')->middleware('auth:users'); //--pembeli
+Route::get('/konfirmstatus/{id}','TransaksiController@konfStatus')->middleware('auth:users'); //--pembeli
 //================================================================
-Route::get('/tambahkanwarung', 'WarungController@viewTambah')->middleware('auth:users');
-Route::post('/tambahwarung', 'WarungController@insert');
-Route::get('/hapuswarung/{userid}', 'WarungController@delete');
+Route::get('/tambahkanwarung', 'WarungController@viewTambah')->middleware('auth:users');//--user biasa
+Route::post('/tambahwarung', 'WarungController@insert');//--user biasa
+Route::get('/hapuswarung/{userid}', 'WarungController@delete');//--Penjual
 //================================================================
-Route::get('/tambahkankategori', 'KategoriController@viewTambah')->middleware('auth:users');
-Route::post('/tambahkategori', 'KategoriController@insert');
+Route::get('/formtransaksi/{id}', 'TransaksiController@formTrans')->middleware('auth:users');//--Pembeli
+Route::post('/tambahtransaksi', 'TransaksiController@simpanTrans');//--Pembeli
+Route::get('/detail pesanan', 'TransaksiController@detail')->middleware('auth:users');//--Pembeli
 //================================================================
-Route::get('/tabelpenjualan/{idUser}', 'BarangController@showTabelBarangWarung')->middleware('auth:users');
-Route::get('/tambahkanbarang', 'BarangController@viewTambah')->middleware('auth:users');
-Route::post('/tambahbarang', 'BarangController@insert');
-Route::get('/editbarang/{id}', 'BarangController@viewEdit')->middleware('auth:users');
-Route::post('/updatebarang/{id}', 'BarangController@update');
-Route::get('/hapusbarang/{id}', 'BarangController@delete');
+Route::get('/tabelpembeli/{idUser}', 'TransaksiController@showTabelPembeli')->middleware('auth:users');//--Penjual
+Route::get('/tabelpenjualan/{idUser}', 'BarangController@showTabelBarangWarung')->middleware('auth:users');//--Penjual
+Route::get('/cancelpesanan/{id}','TransaksiController@cancPesanan')->middleware('auth:users'); //--Penjual
+Route::get('/tambahkanbarang', 'BarangController@viewTambah')->middleware('auth:users');//--Penjual
+Route::post('/tambahbarang', 'BarangController@insert');//--Penjual
+Route::get('/editbarang/{id}', 'BarangController@viewEdit')->middleware('auth:users');//--Penjual
+Route::post('/updatebarang/{id}', 'BarangController@update');//--Penjual
+Route::get('/hapusbarang/{id}', 'BarangController@delete');//--Penjual
+Route::get('/tabelpembeli/{idUser}', 'TransaksiController@showTabelPembeli')->middleware('auth:users');//--Penjual
 //================================================================
-Route::get('/formtransaksi/{id}', 'TransaksiController@formTrans')->middleware('auth:users');
-Route::post('/tambahtransaksi', 'TransaksiController@simpanTrans');
 
-// Route::get('/coba',function(){	$data = Transaksi::all();
-//return view('coba')->with('val',$data);});
+
+//=========================ADMIN==================================
+Route::get('/tambahkankategori', 'KategoriController@viewTambah')->middleware('auth:users');//--admin
+Route::post('/tambahkategori', 'KategoriController@insert');//--admin
 
 
 
@@ -62,11 +68,11 @@ Route::get('/hapususer/{id}', 'AuthController@delete');
 // Route::put('/updatewarung/{id}', 'WarungController@update');
 // Route::get('/hapuswarung/{id}', 'WarungController@delete');
 //==========================KATEGORI================================
-Route::get('/showkategori', 'KategoriController@showall');
-Route::get('/findkategori/{id}', 'KategoriController@find');
-//Route::post('/tambahkategori', 'KategoriController@insert');
-Route::put('/updatekategori/{id}', 'KategoriController@update');
-Route::get('/hapuskategori/{id}', 'KategoriController@delete');
+// Route::get('/showkategori', 'KategoriController@showall');
+// Route::get('/findkategori/{id}', 'KategoriController@find');
+// //Route::post('/tambahkategori', 'KategoriController@insert');
+// Route::put('/updatekategori/{id}', 'KategoriController@update');
+// Route::get('/hapuskategori/{id}', 'KategoriController@delete');
 //==========================BARANG==================================
 // Route::get('/showbarang', 'KategoriController@showall');
 // Route::get('/findbarang/{id}', 'KategoriController@find');

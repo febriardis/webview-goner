@@ -41,7 +41,7 @@
 		<div class="form-group">
 			<label class="control-label col-lg-2">Gambar Barang:</label>
 			<div class="col-lg-10">
-				<input type="file" name="foto" class="file-styled">
+				<input type="file" name="foto" class="file-styled" required="">
 				<span class="help-block">Accepted formats: gif, png, jpg. Max file size 2Mb</span>
 			</div>
 		</div>

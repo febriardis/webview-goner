@@ -12,8 +12,11 @@
 			{{ Session::get('pesan') }} !
 		</div>
 	@endif
-	<form action="" method="POST" class="form-horizontal form-validate-jquery">
+
+	<form action="/tambahtransaksi" method="POST" class="form-horizontal form-validate-jquery">
 		{{ csrf_field() }}
+		<input type="hidden" name="user_id" readonly="" value="{{ Auth::user()->id }}">
+		<input type="hidden" name="barang_id" value="{{ $tbBarang->id }}" required="" readonly="">
 		<div class="panel">
 			<div class="panel-heading" style="border-bottom: 2px solid #f5f5f5">
 				<h6 class="panel-title text-bold">Barang yang dibeli</h6>
@@ -46,7 +49,7 @@
 					<option id="4" value="4">Fak. Syariah dan Hukum</option>
 					<option id="5" value="5">Fak. Psikologi</option>
 				</select>
-				<textarea class="form-control" rows="3" required="" placeholder="Kemana pesanan mau dikirim..."></textarea>
+				<textarea class="form-control" name="det_kirim_ke" rows="3" required="" placeholder="Kemana pesanan mau dikirim..."></textarea>
 			</div>
 		</div>
 
@@ -63,7 +66,7 @@
 					</tr>
 					<tr>
 						<td><b>Jumlah</b> <span style="float: right;">{{ $req->jumlah }}</span></td>
-						<input type="hidden" class="form-control-plaintext" id="jumlah" value="{{ $req->jumlah }}" readonly>
+						<input type="hidden" name="jum_orderan" class="form-control-plaintext" id="jumlah" value="{{ $req->jumlah }}" readonly>
 					</tr>
 					<tr>
 						<td><b>Ongkos Kirim</b> <span style="float: right;">Rp. </span></td>
@@ -73,7 +76,7 @@
 				<table>
 					<tr>
 						<td width="140"><b>Total</b> <span style="float: right;">Rp. </span></td>
-						<td><input type="number" class="form-control-plaintext" readonly id="total"></td>
+						<td><input type="number" class="form-control-plaintext" name="nominal" readonly id="total"></td>
 					</tr>
 				</table>
 			</div>

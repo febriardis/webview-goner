@@ -113,7 +113,7 @@
 								<li><a href="/home"><i class="icon-home4"></i> <span>Home</span></a></li>
 								<li><a href="/warung"><i class="icon-store"></i> <span>Warung</span></a></li>
 								<li><a href="/kategori"><i class="glyphicon glyphicon-align-center"></i>  <span>Kategori</span></a></li>
-								<li><a href=""><i class="icon-cart5"></i><span>Pesanan Saya</span></a></li>
+								<li><a href="/tabelpesanan/{{ Auth::user()->id }}"><i class="icon-cart5"></i><span>Pesanan Saya</span></a></li>
 								
 								{{! $cek = (App\Warung::where('user_id', Auth::user()->id)->get())}}
 								@if(count($cek)!=0)
@@ -122,7 +122,7 @@
 									<li class="navigation-header"><span>Manage Warung</span> <i class="icon-menu" title="Main pages"></i></li>
 									<li><a href="/tambahkanbarang"><i class="icon-add"></i><span>Tambah Barang</span></a></li>
 									<li><a href="/tabelpenjualan/{{ Auth::user()->id }}"><i class="icon-coin-dollar"></i> <span>Tabel Penjualan</span></a></li>
-									<li><a href="/tambahkanbarang"><i class="icon-cash3"></i> <span class="badge bg-warning-400">2</span> <span>Tabel Pembeli</span></a></li>
+									<li><a href="/tabelpembeli/{{ Auth::user()->id }}"><i class="icon-cash3"></i> <span class="badge bg-warning-400">2</span> <span>Tabel Pembeli</span></a></li>
 									<li><a href="/hapuswarung/{{ Auth::user()->id }}" onclick="return ConfirmDelete()"><i class="icon-subtract"></i> <span>Hapus Warung</span></a></li>
 									<script>
 									  	function ConfirmDelete() {

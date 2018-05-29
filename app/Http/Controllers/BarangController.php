@@ -24,7 +24,6 @@ class BarangController extends Controller
 		->with('tbWarung', $tbWar)
 		->with('tabel', $tabel);
 	}
-
 //-------------------------------------------------------------------------
 	public function showTabelBarangWarung($userId) {
 		$cekWarung = Warung::where('user_id', $userId)->first();
