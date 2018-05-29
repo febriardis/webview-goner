@@ -25,14 +25,14 @@
            		<img src="{{ url('uploads/file/'.$gmbr->foto) }}" style="width: 100%; height: 200px" alt="">
        		@endif
 	      	<div class="carousel-caption">
-	      		<div style="background: #fafafa;color: #000"><h4>Pesan disini sekarang!</h4></div>
+	      		<div style="background: #fafafa;color: #000"><h5>Pesan disini sekarang!</h5></div>
 	    	</div>
 	    </div>
 
 	    <div class="item">
 	      	<img src="/images/ban2.jpg" style="width: 100%; height: 200px" alt="">
 	      	<div class="carousel-caption">
-	        	<div style="background: #fafafa;color: #000"><h4>Terimakasih telah berkunjung!</h4></div>
+	        	<div style="background: #fafafa;color: #000"><h5>Terimakasih telah berkunjung!</h5></div>
 	      	</div>
 	    </div>
 
@@ -52,8 +52,13 @@
 		<a href="/barang/{{ $tb->id }}">
 			<div class="col-sm-4 col-lg-2">
 				<div class="panel">
-		      		<img src="/assets/images/placeholder.jpg" style="width: 100%; height: 150px" alt="">
-		     
+					<div style="display: none;">
+					{{ $getGm = (App\Barang::where('kategori_id', $tb->id)->inRandomOrder()->limit(1)->first()) }}</div>
+			    	@if(!$getGm)
+		           		<img src="/assets/images/placeholder.jpg" style="width: 100%; height: 150px" alt="">
+		           	@else
+		           		<img src="{{ url('uploads/file/'.$getGm->foto) }}" style="width: 100%; height: 150px" alt="">
+		       		@endif
 					<div class="p-15" style="border-top: 4px solid #fafafa">
 						<div class="media-body">
 							<strong>{{ $tb->nm_kategori }}</strong>
