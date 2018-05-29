@@ -41,7 +41,7 @@
 										<i class="icon-menu9"></i>
 									</a>
 									<ul class="dropdown-menu dropdown-menu-right">
-										<li><a href="/konfirmstatus/{{ $tb->id }}" style="color: #fff" class="btn btn-info btn-xs"> Edit Barang</a>
+										<li><a href="/konfirmstatus/{{ $tb->id }}" style="color: #fff" class="btn btn-info btn-xs"> Confirm</a>
 										</li>
 										<li>
 											<form action="/batalpesanan/{{ $tb->id }}" method="GET">
