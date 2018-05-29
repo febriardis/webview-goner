@@ -44,9 +44,9 @@
 										<input type="submit" value="Cancel Pesanan" class="btn-danger btn-xs">
 									</form>
 								@elseif($c->status == 'pesanan dibatalkan')
-									<span class="label label-danger">{{ $c->status }}</span>
+									<span class="label label-danger">Dibatalkan</span>
 								@elseif($c->status == 'selesai')
-									<span class="label label-success">Pesanan Selesai</span>
+									<span class="label label-success">Telah Diterima</span>
 								@endif
 							</td>
 						</tr>

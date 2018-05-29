@@ -41,7 +41,7 @@
 										<i class="icon-menu9"></i>
 									</a>
 									<ul class="dropdown-menu dropdown-menu-right">
-										<li><a href="/konfirmstatus/{{ $tb->id }}" style="color: #fff" class="btn btn-info btn-xs"> Edit Barang</a>
+										<li><a href="/konfirmstatus/{{ $tb->id }}" style="color: #fff" class="btn btn-info btn-xs"> Confirm</a>
 										</li>
 										<li>
 											<form action="/batalpesanan/{{ $tb->id }}" method="GET">
@@ -53,9 +53,9 @@
 								</li>
 							</ul>
 						@elseif($tb->status == 'pesanan dibatalkan')
-							<span class="label label-danger">{{ $tb->status }}</span>
+							<span class="label label-danger">Dibatalkan</span>
 						@elseif($tb->status == 'selesai')
-							<span class="label label-success">Pesanan Selesai</span>
+							<span class="label label-success">Telah Diterima</span>
 						@endif
 					</td>			
 				</tr>
