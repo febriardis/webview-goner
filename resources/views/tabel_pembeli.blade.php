@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
-@section('btBack')
-
+@section('btback')
+	<a href="/home"><i class="icon-arrow-left8"></i></a>
 @endsection
 
 @section('content')
@@ -20,7 +20,7 @@
 			<thead>
 				<tr>
 					<th>Pembeli</th>
-					<th>Barang</th>
+					<th>Detail Barang</th>
 					<th class="text-center">Status</th>
 				</tr>
 			</thead>
@@ -33,7 +33,8 @@
 							<td>{{ (App\User::find($c->user_id)->nama) }}</td>
 							<td>{{ (App\Barang::find($c->barang_id)->nm_barang) }}
 								<p>{{ $c->jum_orderan }} Pcs</p>
-								<p>Biaya Rp.{{ $c->nominal }}</p>
+								<p><b>Biaya</b> Rp.{{ $c->nominal }}</p>
+								<p><b>Kirim ke</b> {{ $c->kirim_ke }}, {{ $c->det_kirim_ke }}</p>
 							</td>
 							<td class="text-center" width="170">
 								@if($c->status == 'sedang diproses')

@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
-@section('btBack')
-
+@section('btback')
+	<a href="/home"><i class="icon-arrow-left8"></i> </a>
 @endsection
 
 @section('content')
@@ -32,16 +32,32 @@
 						<p>{{ $tb->jum_orderan }} Pcs</p>
 					</td>
 					<td>{{ $tb->nominal }}</td>
-					<td class="text-center">
+					<td class=>
 						@if($tb->status == 'sedang diproses')
-							<span class="label label-info" style="margin-bottom: 5px">{{ $tb->status }}</span>
-							<a href="/konfirmstatus/{{ $tb->id }}" class="btn-primary btn-xs"><i class="glyphicon glyphicon-ok-circle"></i> Confirm</a>
+							<span class="label label-info" style="float: left;">{{ $tb->status }}</span>
+							<ul class="icons-list" style="float: right;">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<i class="icon-menu9"></i>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-right">
+										<li><a href="/konfirmstatus/{{ $tb->id }}" style="color: #fff" class="btn btn-info btn-xs"> Edit Barang</a>
+										</li>
+										<li>
+											<form action="/batalpesanan/{{ $tb->id }}" method="GET">
+												<input type="hidden" name="idUser" value="{{ Auth::user()->id }}">
+												<input type="submit" value="Cancel Pesanan" style="width: 100%" class="btn btn-danger btn-xs" >
+											</form>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						@elseif($tb->status == 'pesanan dibatalkan')
 							<span class="label label-danger">{{ $tb->status }}</span>
 						@elseif($tb->status == 'selesai')
 							<span class="label label-success">Pesanan Selesai</span>
 						@endif
-					</td>
+					</td>			
 				</tr>
 				@endforeach
 			</tbody>

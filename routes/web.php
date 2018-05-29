@@ -18,13 +18,14 @@ Route::get('/keluar', 'AuthController@keluar');
 Route::get('/register', function () {return view('Auth.regist');})->middleware('guest');//--
 Route::post('/register', 'AuthController@regist');
 //=================================================================
-Route::get('/home', 'KategoriController@showall')->middleware('auth:users'); //--pembeli
+Route::get('/home', 'KategoriController@showinHome')->middleware('auth:users'); //--pembeli
 Route::get('/warung', 'WarungController@showall')->middleware('auth:users'); //--pembeli
 Route::get('/barangwarung/{idWarung}', 'BarangController@showBarangWarung')->middleware('auth:users'); //--pembeli
 Route::get('/barang/{id}', 'BarangController@show')->middleware('auth:users'); //--pembeli
-Route::get('/kategori','KategoriController@showall')->middleware('auth:users'); //--pembeli
+Route::get('/kategori','KategoriController@showallkat')->middleware('auth:users'); //--pembeli
 Route::get('/tabelpesanan/{userid}','TransaksiController@showPesanan')->middleware('auth:users'); //--pembeli
 Route::get('/konfirmstatus/{id}','TransaksiController@konfStatus')->middleware('auth:users'); //--pembeli
+Route::get('/batalpesanan/{id}','TransaksiController@batalPesanan')->middleware('auth:users'); //--Penjual
 //================================================================
 Route::get('/tambahkanwarung', 'WarungController@viewTambah')->middleware('auth:users');//--user biasa
 Route::post('/tambahwarung', 'WarungController@insert');//--user biasa
@@ -32,7 +33,7 @@ Route::get('/hapuswarung/{userid}', 'WarungController@delete');//--Penjual
 //================================================================
 Route::get('/formtransaksi/{id}', 'TransaksiController@formTrans')->middleware('auth:users');//--Pembeli
 Route::post('/tambahtransaksi', 'TransaksiController@simpanTrans');//--Pembeli
-Route::get('/detail pesanan', 'TransaksiController@detail')->middleware('auth:users');//--Pembeli
+Route::get('/detail pesanan/{id}', 'TransaksiController@detail')->middleware('auth:users');//--Pembeli
 //================================================================
 Route::get('/tabelpembeli/{idUser}', 'TransaksiController@showTabelPembeli')->middleware('auth:users');//--Penjual
 Route::get('/tabelpenjualan/{idUser}', 'BarangController@showTabelBarangWarung')->middleware('auth:users');//--Penjual

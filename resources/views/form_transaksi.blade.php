@@ -41,7 +41,7 @@
 			</div>
 			
 			<div class="panel-body">
-				<select name="kirim_ke" data-placeholder="-Pilih Fakultas-" required="" class="select">
+				<select name="kirim_k" data-placeholder="-Pilih Fakultas-" required="" class="select">
 					<option></option>
 					<option id="1" value="1">Fak. Sains dan Teknologi</option>
 					<option id="2" value="2">Fak. Ushuludin</option>
@@ -49,6 +49,7 @@
 					<option id="4" value="4">Fak. Syariah dan Hukum</option>
 					<option id="5" value="5">Fak. Psikologi</option>
 				</select>
+				<input type="hidden" readonly name="kirim_ke" id="almt" value="">
 				<textarea class="form-control" name="det_kirim_ke" rows="3" required="" placeholder="Kemana pesanan mau dikirim..."></textarea>
 			</div>
 		</div>
@@ -92,16 +93,22 @@
 		    $("select").change(function(){
 		        if($(this).val() == "1") {
 	                document.getElementById('ongkir').value = 0;
+	                document.getElementById('almt').value = 'Fak. Sains dan Teknologi';
 	            }else if ($(this).val() == "2") {
 	            	document.getElementById('ongkir').value = 1000;
+	                document.getElementById('almt').value = 'Fak. Ushuludin';
 	            }else if ($(this).val() == "3"){
 	            	document.getElementById('ongkir').value = 1500;
+	                document.getElementById('almt').value = 'Fak. ISIP';
 	            }else if ($(this).val() == "4"){
 	            	document.getElementById('ongkir').value = 2000;
+	                document.getElementById('almt').value = 'Fak. Syariah dan Hukum';
 	            }else if ($(this).val() == "5"){
 	            	document.getElementById('ongkir').value = 2500;
+	                document.getElementById('almt').value = 'Fak. Psikologi';
 	            }else{	
 	            	document.getElementById('ongkir').value = 3000;
+	                document.getElementById('almt').value = '';
 	            }
 
 	            $(document).ready(function() {

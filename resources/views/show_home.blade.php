@@ -19,19 +19,23 @@
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">
 	    <div class="item active">
-	      <img src="/images/ban1.jpg" alt="Chania" style="width: 100%; height: 200px ">
+			<div style="display: none;">
+	    	{{! $getGmbr = (App\Barang::inRandomOrder()->limit(1)->first()) }}</div>
+	    	@if(count($getGmbr) == 0)
+           		<img src="/images/ban1.jpg" style="width: 100%; height: 200px" alt="">
+           	@else
+           		<img src="{{ url('uploads/file/'.$getGmbr->foto) }}" style="width: 100%; height: 200px" alt="">
+       		@endif
 	      <div class="carousel-caption">
-	        <h3>Los Angeles</h3>
-	        <p>LA is always so much fun!</p>
+	      	<div style="background: #fafafa;color: #000"><h4>Pesan disini sekarang!</h4></div>
 	      </div>
 	    </div>
 
 	    <div class="item">
-	      <img src="/images/ban2.jpg" alt="Chicago" style="width: 100%; height: 200px ">
-	      <div class="carousel-caption">
-	        <h3>Chicago</h3>
-	        <p>Thank you, Chicago!</p>
-	      </div>
+	      	<img src="/images/ban2.jpg" style="width: 100%; height: 200px" alt="">
+	      	<div class="carousel-caption">
+	        	<div style="background: #fafafa;color: #000"><h4>Terimakasih telah berkunjung!</h4></div>
+	      	</div>
 	    </div>
 
 	  <!-- Left and right controls -->
@@ -44,14 +48,20 @@
 	    <span class="sr-only">Next</span>
 	  </a>
 	</div>
-	<br>
+	<hr>
 	<!-- Page container -->
-		@foreach($tbl as $tb)
+		@foreach($tbkat as $tb)
 		<a href="/barang/{{ $tb->id }}">
 			<div class="col-sm-4 col-lg-2">
 				<div class="panel">
-					<img src="assets/images/placeholder.jpg" style="width: 100%; max-height: 150px" alt="">
-					<div class="p-15">
+					<div style="display: none;">
+					{{! $getGm = (App\Barang::where('kategori_id', $tb->id)->inRandomOrder()->limit(1)->first()) }}</div>
+			    	@if(count($getGm) == 0)
+		           		<img src="/assets/images/placeholder.jpg" style="width: 100%; height: 150px" alt="">
+		           	@else
+		           		<img src="{{ url('uploads/file/'.$getGm->foto) }}" style="width: 100%; height: 150px" alt="">
+		       		@endif
+					<div class="p-15" style="border-top: 4px solid #fafafa">
 						<div class="media-body">
 							<strong>{{ $tb->nm_kategori }}</strong>
 						</div>

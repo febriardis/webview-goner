@@ -11,6 +11,7 @@ class Transaksi extends Model
 		'user_id', 
 		'barang_id',
 		'kirim_ke',
+		'det_kirim_ke',
 		'jum_orderan',
 		'nominal',
 		'status',

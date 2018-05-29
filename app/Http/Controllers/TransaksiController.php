@@ -20,18 +20,24 @@ class TransaksiController extends Controller
 		$tb = new Transaksi;
 		$tb->user_id 	 = $req->user_id;
 		$tb->barang_id   = $req->barang_id;
-		$tb->kirim_ke    = $req->kirim_ke; //, $req->det_kirim_ke;
+		$tb->kirim_ke    = $req->kirim_ke;
+		$tb->det_kirim_ke= $req->det_kirim_ke;
 		$tb->jum_orderan = $req->jum_orderan;
 		$tb->nominal	 = $req->nominal;
 		$tb->status 	 = 'sedang diproses';
 		$tb->save();
 
-		return redirect('/detail pesanan')
-		->with('cekdetail', $req);
-		//return redirect()->action('TransaksiController@detail', ['idTrans' => $req->user_id])
+		//return redirect('/detail pesanan') //response()->json($tb);
+		//->with('cekdetail', $tb);
+		return redirect()->action('TransaksiController@detail', ['idTrans' => $tb]);
 	}
-	public function detail(){
-		return view('detail_pesanan');
+
+	public function detail($idTrans){
+		$tb = Transaksi::find($idTrans);
+
+		return view('detail_pesanan')
+		->with('cekdetail', $tb);
+		//->with('cekdetail', $idTrans);
 	}
 
 //-------------------------------------------------------------------------
@@ -47,8 +53,15 @@ class TransaksiController extends Controller
 		$tb->status = 'selesai';
 		$tb->save();
 
-		return redirect()->action('TransaksiController@showPesanan', [
-			'user_id' => $tb->user_id]);
+		return redirect()->action('TransaksiController@showPesanan', ['user_id' => $tb->user_id]);
+	}
+
+	public function batalPesanan(Request $req, $id) {
+		$tb = Transaksi::find($id);
+		$tb->status = 'pesanan dibatalkan';
+		$tb->save();
+
+		return redirect()->action('TransaksiController@showPesanan', ['user_id' => $req->idUser]);
 	}
 //-------------------------------------------------------------------------
 	public function showTabelPembeli($userId) {
@@ -62,8 +75,7 @@ class TransaksiController extends Controller
 		$tb->status = 'pesanan dibatalkan';
 		$tb->save();
 
-		return redirect()->action('TransaksiController@showTabelPembeli', [
-			'user_id' => $req->id ]); //XXX id Penjual
+		return redirect()->action('TransaksiController@showTabelPembeli', ['user_id' => $req->idPenjual ]); //XXX id Penjual
 	}
 
 	//=============================================

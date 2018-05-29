@@ -4,12 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Kategori;
+use App\Barang;
 
 class KategoriController extends Controller
 {    
-	public function showall(){
+	public function showinHome() {
 		$tabel = Kategori::all();
+		$tbBarang = Barang::inRandomOrder()->first();
 		return view('show_home') //response()->json(Kategori::all());
+		->with('tbkat', $tabel)		
+		->with('tbBar', $tbBarang);
+	}
+
+	public function showallkat(){
+		$tabel = Kategori::all();
+		return view('show_kategori') //response()->json(Kategori::all());
 		->with('tbl', $tabel);
 	}
 	

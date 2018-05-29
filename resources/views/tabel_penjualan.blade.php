@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
-@section('btBack')
-
+@section('btback')
+	<a href="/home"><i class="icon-arrow-left8"></i> </a>
 @endsection
 
 @section('content')

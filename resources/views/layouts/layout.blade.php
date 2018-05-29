@@ -62,7 +62,7 @@
 			<ul class="nav navbar-nav pull-left visible-xs-block">
 				<li>@yield('btback')</li>
 			</ul>
-			<a class="navbar-brand" href="index.html"><b style="font-size: 18px">Goner</b></a>
+			<a class="navbar-brand" href=""><b style="font-size: 18px">Goner</b></a>
 			<ul class="nav navbar-nav pull-right visible-xs-block">
 				<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
 			</ul>

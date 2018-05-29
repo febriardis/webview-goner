@@ -18,6 +18,7 @@ class TbTransaksi extends Migration
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('barang_id');
             $table->string('kirim_ke');
+            $table->string('det_kirim_ke');
             $table->string('jum_orderan');
             $table->string('nominal');
             $table->string('status');
