@@ -20,12 +20,8 @@
 	  <div class="carousel-inner">
 	    <div class="item active">
 			<div style="display: none;">
-	    	{{! $getGmbr = (App\Barang::inRandomOrder()->limit(1)->first()) }}</div>
-	    	@if(count($getGmbr) == 0)
-           		<img src="/images/ban1.jpg" style="width: 100%; height: 200px" alt="">
-           	@else
-           		<img src="{{ url('uploads/file/'.$getGmbr->foto) }}" style="width: 100%; height: 200px" alt="">
-       		@endif
+         		<img src="/images/ban1.jpg" style="width: 100%; height: 200px" alt="">
+  
 	      <div class="carousel-caption">
 	      	<div style="background: #fafafa;color: #000"><h4>Pesan disini sekarang!</h4></div>
 	      </div>
@@ -54,13 +50,8 @@
 		<a href="/barang/{{ $tb->id }}">
 			<div class="col-sm-4 col-lg-2">
 				<div class="panel">
-					<div style="display: none;">
-					{{! $getGm = (App\Barang::where('kategori_id', $tb->id)->inRandomOrder()->limit(1)->first()) }}</div>
-			    	@if(count($getGm) == 0)
 		           		<img src="/assets/images/placeholder.jpg" style="width: 100%; height: 150px" alt="">
-		           	@else
-		           		<img src="{{ url('uploads/file/'.$getGm->foto) }}" style="width: 100%; height: 150px" alt="">
-		       		@endif
+		
 					<div class="p-15" style="border-top: 4px solid #fafafa">
 						<div class="media-body">
 							<strong>{{ $tb->nm_kategori }}</strong>
