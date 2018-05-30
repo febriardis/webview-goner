@@ -21,7 +21,7 @@
 	    	@if(!$gmbr)
            		<img src="/images/ban1.jpg" style="width: 100%; height: 200px" alt="">
            	@else
-           		<img src="{{ url('uploads/file/'.$gmbr->foto) }}" style="width: 100%; height: 200px" alt="">
+           		<img src="{{ url('uploads/file/'.$gmbr->foto) }}" alt="Images not found" style="width: 100%; height: 200px" alt="">
        		@endif
 	      	<div class="carousel-caption">
 	      		<div style="background: #fafafa;color: #000"><h5>Pesan disini sekarang!</h5></div>
@@ -53,11 +53,17 @@
 				<div class="panel">
 					<div style="display: none;">
 					{{ $getGm = (App\Barang::where('kategori_id', $tb->id)->inRandomOrder()->limit(1)->first()) }}</div>
+			    	
 			    	@if(!$getGm)
-		           		<img src="/assets/images/placeholder.jpg" style="width: 100%; height: 150px" alt="">
+			    	<div style="width: 100%; border: 1px solid #fafafa; height: 150px">
+		           		<img src="/assets/images/placeholder.jpg" alt="Image not found" style="width: 100%; height: 100%;" alt="">
+		           	</div>
 		           	@else
-		           		<img src="{{ url('uploads/file/'.$getGm->foto) }}" style="width: 100%; height: 150px" alt="">
+			    	<div style="width: 100%; border: 1px solid #fafafa; height: 150px">
+		           		<img src="{{ url('uploads/file/'.$getGm->foto) }}" alt="Image not found" style="width: 100%; height: 150px; border: 1px solid #fafafa;" alt="">
+		           	</div>
 		       		@endif
+
 					<div class="p-15" style="border-top: 4px solid #fafafa">
 						<div class="media-body">
 							<strong>{{ $tb->nm_kategori }}</strong>

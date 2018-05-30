@@ -1,7 +1,5 @@
 <?php
 
-//use App\Transaksi;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Route::get('/foto', function(){ return public_path('uploads\file\235021724.jpg'); })->middleware('auth:users');
+
 Route::get('/', function () {return view('Auth.login');})->middleware('guest');//--
 Route::post('/login', 'AuthController@login');
 Route::get('/keluar', 'AuthController@keluar');

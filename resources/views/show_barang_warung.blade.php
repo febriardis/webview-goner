@@ -9,9 +9,13 @@
 	<hr>
 		<div class="panel">
 			@if($tbWarung->foto == 0)
-	      		<img src="/assets/images/placeholder.jpg" style="width: 100%; max-height: 150px" alt="">
+				<div style="width: 100%; border: 1px solid #fafafa; height: 150px">
+		       		<img src="/assets/images/placeholder.jpg" alt="Image not found" style="width: 100%; height: 100%;">
+		       	</div>
         	@else
-	      		<img src="{{ url('uploads/file/'.$tbWarung->foto) }}" style="width: 100%; max-height: 150px" alt="">
+        		<div style="width: 100%; border: 1px solid #fafafa; height: 150px">
+		       		<img src="{{ url('uploads/file/'.$tbWarung->foto) }}" alt="Image not found" style="width: 100%; height: 100%;">
+		       	</div>
        		@endif
        		<div class="p-15">
 				<div class="media-body">
@@ -29,8 +33,10 @@
 		@foreach($tabel as $tb)
 			<div style="width: 160px; float: left; margin:0px">
 				<div class="panel">
-					<img src="{{ url('uploads/file/'.$tb->foto) }}" style="width: 100%; height: 100px" alt="">
-					<div class="p-15">
+					<div style="width: 100%; border: 1px solid #fafafa; height: 100px">
+		           		<img src="{{ url('uploads/file/'.$tb->foto) }}" alt="Image not found" style="width: 100%; height: 100%;">
+		           	</div>
+		           	<div class="p-15">
 						<div class="media-body">
 							<strong>{{ $tb->nm_barang }}</strong>
 							<!--<p>{{ $tb->desk_barang }}</p>-->

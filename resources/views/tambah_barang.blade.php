@@ -61,7 +61,7 @@
 			</div>
 		</div>
 		<div class="text-right">
-			<button type="submit" class="btn btn-primary">Simpan</button>
+			<button type="submit" class="btn btn-primary btn-ladda btn-ladda-spinner" data-spinner-color="#333" data-style="zoom-in">Simpan</button>
 		</div>
 	</form>
 </div>

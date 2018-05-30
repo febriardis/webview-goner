@@ -35,6 +35,14 @@
 		<script type="text/javascript" src="/assets/js/pages/alpaca_basic.js"></script>
 		<!-- /theme JS files -->
 
+
+		<!-- Theme JS files -->
+	
+		<script type="text/javascript" src="assets/js/plugins/buttons/spin.min.js"></script>
+		<script type="text/javascript" src="assets/js/plugins/buttons/ladda.min.js"></script>
+		<script type="text/javascript" src="assets/js/pages/components_buttons.js"></script>
+		<!-- /theme JS files -->
+
 	</head>
 
 	<body>

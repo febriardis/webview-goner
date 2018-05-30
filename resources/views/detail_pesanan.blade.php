@@ -22,15 +22,22 @@
 			<div class="panel-heading" style="border-bottom: 2px solid #f5f5f5">
 				<h6 class="panel-title text-bold">Barang yang dibeli</h6>
 			</div>
-			{{! $tbBar = (App\Barang::find($cekdetail->barang_id))->first() }}
+			{{! $cekFot = (App\Barang::find($cekdetail->barang_id))->foto }}
+			{{! $cekNm = (App\Barang::find($cekdetail->barang_id))->nm_barang }}
+			{{! $cekBar = (App\Barang::find($cekdetail->barang_id))->desk_barang }}
+			{{! $cekHarga = (App\Barang::find($cekdetail->barang_id))->harga }}
 			<div class="panel-body">
 				<div style="float: left; margin-top: -10px; margin-bottom: -50px">
-					<img src="{{ url('uploads/file/'.$tbBar->foto) }}" style="float: left; margin-right: 20px; width: 30%; height: 70px" alt="">
-					<h3>{{ $tbBar->nm_barang }}</h3>
-					<p>{{ $tbBar->desk_barang }}</p>
+					
+					<div style="float: left; margin-right: 20px; width: 30%; border: 1px solid #fafafa; height: 70px">
+		           		<img src="{{ url('uploads/file/'.$cekFot) }}" alt="Image not found" style="width: 100%; height: 100%;">
+		           	</div>
+
+					<h3>{{ $cekNm}}</h3>
+					<p>{{ $cekBar }}</p>
 				</div>
 				<div style="float: right; margin-top: 45px">
-				{{! $jum_str = preg_replace("/[^0-9]/", "", $tbBar->harga) }}
+				{{! $jum_str = preg_replace("/[^0-9]/", "", $cekHarga) }}
 		    	<h4><b>Rp. {{ number_format($jum_str,0 , "," , ".") }}</b></h4>
 				</div>
 			</div>

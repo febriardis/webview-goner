@@ -13,7 +13,9 @@
 		<!--<a href="/formtransaksi/{{ Auth::user()->id }}">-->
 			<div style="width: 160px; float: left; margin:0px">
 				<div class="panel">
-					<img src="{{ url('uploads/file/'.$tb->foto) }}" style="width: 100%; height: 100px" alt="">
+					<div style="width: 100%; border: 1px solid #fafafa; height: 100px">
+		           		<img src="{{ url('uploads/file/'.$tb->foto) }}" alt="Image not found" style="width: 100%; height: 100%;">
+		           	</div>
 					<div class="p-15">
 						<div class="media-body">
 							<strong>{{ $tb->nm_barang }}</strong>
@@ -29,19 +31,4 @@
 			</div>
 		<!--</a>-->
 		@endforeach
-		<!-- Footer -->
-		<div style="display: none;" class="navbar navbar-default navbar-fixed-bottom">
-			<div class="navbar-right">
-				<ul class="nav navbar-nav" style="margin: 15px">
-					<img src="/assets/images/placeholder.jpg" style="width: 20%; margin-right: 10px; float: left;" alt="">
-					<li>
-						<p>Estimasi Harga</p>
-						<p>Rp.</p>
-						<button type="button" class="btn text-right btn-info btn-labeled btn-xs"><b><i class="icon-cart-add2"></i></b>Beli</button></p>
-					</li>
-
-				</ul>
-			</div>
-		</div>
-		<!-- /footer -->
 @endsection

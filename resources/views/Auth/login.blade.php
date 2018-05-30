@@ -15,6 +15,11 @@
   				{{ Session::get('pesanberhasil') }} !
 			</div>
 		@endif
+
+		<div style="text-align: center; display: none;">
+			<img src="/images/sending2.gif" width="50">
+		</div>
+
 		<form class="form-horizontal form-validate-jquery" action="/login" method="POST">
 			{{ csrf_field() }}
 			<div class="form-group">
@@ -36,8 +41,8 @@
 				</div>
 			</div>
 			<div class="text-right">
-				<button type="submit" style="width: 100%" class="btn btn-primary">Masuk</button>
-				<a href="{{ url('/register') }}" style="width: 100%; margin-top: 5px" class="btn btn-primary"> Daftar </a>
+				<button type="submit" style="width: 100%" class="btn btn-primary btn-ladda btn-ladda-spinner" data-spinner-color="#333" data-style="zoom-in">Masuk</button>
+				<a href="{{ url('/register') }}" style="width: 100%; margin-top: 5px" class="btn btn-primary btn-ladda btn-ladda-spinner" data-spinner-color="#333" data-style="zoom-in"> Daftar </a>
 			</div>
 		</form>
 	</fieldset>

@@ -24,7 +24,9 @@
 			
 			<div class="panel-body">
 				<div style="float: left; margin-top: -10px; margin-bottom: -50px">
-					<img src="{{ url('uploads/file/'.$tbBarang->foto) }}" style="float: left; margin-right: 20px; width: 30%; height: 70px" alt="">
+					<div style="float: left; margin-right: 20px; width: 30%; border: 1px solid #fafafa; height: 70px">
+		           		<img src="{{ url('uploads/file/'.$tbBarang->foto) }}" alt="Image not found" style="width: 100%; height: 100%;">
+		           	</div>
 					<h3>{{ $tbBarang->nm_barang }}</h3>
 					<p>{{ $tbBarang->desk_barang }}</p>
 				</div>
@@ -84,7 +86,7 @@
 		</div>
 			
 		<div>
-			<button type="submit" style="width: 100%" class="btn btn-primary">Konfirmasi</button>
+			<button type="submit" style="width: 100%" class="btn btn-primary btn-ladda btn-ladda-spinner" data-spinner-color="#333" data-style="zoom-in">Konfirmasi</button>
 		</div>
 	</form>
 

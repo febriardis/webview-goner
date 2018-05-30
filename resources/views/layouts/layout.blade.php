@@ -51,8 +51,10 @@
 			  border-width: 1px 0;
 			} 
 		</style>
-
-
+		<script type="text/javascript" src="/assets/js/plugins/buttons/spin.min.js"></script>
+		<script type="text/javascript" src="/assets/js/plugins/buttons/ladda.min.js"></script>
+		<script type="text/javascript" src="/assets/js/pages/components_buttons.js"></script>
+		<!-- /theme JS files -->
 	</head>
 
 	<body>
@@ -110,20 +112,28 @@
 							<ul class="navigation navigation-main navigation-accordion">
 								<!-- Main -->
 								<li class="navigation-header"><span>Menu</span> <i class="icon-menu" title="Main pages"></i></li>
-								<li><a href="/home"><i class="icon-home4"></i> <span>Home</span></a></li>
-								<li><a href="/warung"><i class="icon-store"></i> <span>Warung</span></a></li>
-								<li><a href="/kategori"><i class="glyphicon glyphicon-align-center"></i>  <span>Kategori</span></a></li>
-								<li><a href="/tabelpesanan/{{ Auth::user()->id }}"><i class="icon-cart5"></i><span>Pesanan Saya</span></a></li>
+
+								<li><a href="/home" class="btn-ladda btn-ladda-spinner" data-style="expand-right" data-spinner-color="#333" data-spinner-size="20"><i class="icon-home4" style="padding-right: 10px"></i> <span>Home</span></a></li>
+
+								<li><a href="/warung" class="btn-ladda btn-ladda-spinner" data-style="expand-right" data-spinner-color="#333" data-spinner-size="20"><i class="icon-store" style="padding-right: 10px"></i> <span>Warung</span></a></li>
+
+								<li><a href="/kategori" class="btn-ladda btn-ladda-spinner" data-style="expand-right" data-spinner-color="#333" data-spinner-size="20"><i class="glyphicon glyphicon-align-center" style="padding-right: 10px"></i>  <span>Kategori</span></a></li>
+
+								<li><a href="/tabelpesanan/{{ Auth::user()->id }}" class="btn-ladda btn-ladda-spinner" data-style="expand-right" data-spinner-color="#333" data-spinner-size="20"><i class="icon-cart5" style="padding-right: 11px"></i><span>Pesanan Saya</span></a></li>
 								
 								{{! $cek = (App\Warung::where('user_id', Auth::user()->id)->get())}}
 								@if(count($cek)!=0)
 								<ul class="navigation navigation-main navigation-accordion">
 									<!-- Main -->
 									<li class="navigation-header"><span>Manage Warung</span> <i class="icon-menu" title="Main pages"></i></li>
-									<li><a href="/tambahkanbarang"><i class="icon-add"></i><span>Tambah Barang</span></a></li>
-									<li><a href="/tabelpenjualan/{{ Auth::user()->id }}"><i class="icon-coin-dollar"></i> <span>Tabel Penjualan</span></a></li>
-									<li><a href="/tabelpembeli/{{ Auth::user()->id }}"><i class="icon-cash3"></i> <span class="badge bg-warning-400">2</span> <span>Tabel Pembeli</span></a></li>
-									<li><a href="/hapuswarung/{{ Auth::user()->id }}" onclick="return ConfirmDelete()"><i class="icon-subtract"></i> <span>Hapus Warung</span></a></li>
+
+									<li><a href="/tambahkanbarang" class="btn-ladda btn-ladda-spinner" data-style="expand-right" data-spinner-color="#333" data-spinner-size="20"><i class="icon-add" style="padding-right: 10px"></i><span>Tambah Barang</span></a></li>
+									
+									<li><a href="/tabelpenjualan/{{ Auth::user()->id }}" class="btn-ladda btn-ladda-spinner" data-style="expand-right" data-spinner-color="#333" data-spinner-size="20"><i class="icon-coin-dollar" style="padding-right: 7px"></i> <span>Tabel Penjualan</span></a></li>
+									
+									<li><a href="/tabelpembeli/{{ Auth::user()->id }}" class="btn-ladda btn-ladda-spinner" data-style="expand-right" data-spinner-color="#333" data-spinner-size="20"><i class="icon-cash3" style="padding-right: 7px"></i> <span class="badge bg-warning-400">2</span> <span>Tabel Pembeli</span></a></li>
+									
+									<li><a href="/hapuswarung/{{ Auth::user()->id }}" class="btn-ladda btn-ladda-spinner" data-style="expand-right" data-spinner-color="#333" data-spinner-size="20" onclick="return ConfirmDelete()"><i class="icon-subtract" style="padding-right: 9px"></i> <span>Hapus Warung</span></a></li>
 									<script>
 									  	function ConfirmDelete() {
 									  		var x = confirm("Yakin Akan Menghapus Warung?");
@@ -142,7 +152,7 @@
 								<!-- Main -->
 								<li class="navigation-header"><span>Others</span> <i class="icon-menu" title="Main pages"></i></li>
 								<li><a href=""><i class="icon-cog3"></i> <span>Pengaturan</span></a></li>
-								<li><a href="{{ url('/keluar') }}"><i class="icon-exit"></i> <span>Keluar</span></a></li>
+								<li><a href="{{ url('/keluar') }}" class="btn-ladda btn-ladda-spinner" data-style="expand-right" data-spinner-color="#333" data-spinner-size="20"><i class="icon-exit" style="padding-right: 12px"></i> <span>Keluar</span></a></li>
 							</ul>
 						</div>
 					</div>

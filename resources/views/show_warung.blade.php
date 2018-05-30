@@ -14,9 +14,13 @@
 			<div class="col-sm-4 col-lg-2">
 				<div class="panel">
 			    	@if(!$tb->foto)
-		           		<img src="/assets/images/placeholder.jpg" style="width: 100%; max-height: 150px" alt="">
+			    		<div style="width: 100%; border: 1px solid #fafafa; height: 150px">
+		       				<img src="/assets/images/placeholder.jpg" alt="Image not found" style="width: 100%; height: 100%;">
+		       			</div>
 		           	@else
-		           		<img src="{{ url('uploads/file/'.$tb->foto) }}" style="width: 100%; max-height: 150px" alt="">
+		       			<div style="width: 100%; border: 1px solid #fafafa; height: 150px">
+		       				<img src="{{ url('uploads/file/'.$tb->foto) }}" alt="Image not found" style="width: 100%; height: 100%;">
+		       			</div>
 		       		@endif
 					<div class="p-15">
 						<div class="media-body">

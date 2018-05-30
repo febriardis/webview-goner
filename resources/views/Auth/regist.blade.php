@@ -58,7 +58,7 @@
 				</div>
 			</div>
 			<div>
-				<button type="submit" style="width: 100%" class="btn btn-primary">Daftar</button>
+				<button type="submit" style="width: 100%" class="btn btn-primary btn-ladda btn-ladda-spinner" data-spinner-color="#333" data-style="zoom-in">Daftar</button>
 				<a href="{{ url('/') }}" style="width: 100%; margin-top: 5px" class="btn btn-primary">Batal </a>
 			</div>
 		</form>
