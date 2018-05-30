@@ -145,7 +145,7 @@
 									</script>
 								</ul>
 								@else
-									<li><a href="/tambahkanwarung"><i class="icon-store2"></i><span>Buka Warung</span></a></li>
+									<li><a href="/tambahkanwarung" class="btn-ladda btn-ladda-spinner" data-style="expand-right" data-spinner-color="#333" data-spinner-size="20"><i class="icon-store2" style="padding-right: 10px"></i><span>Buka Warung</span></a></li>
 								@endif
 							</ul>
 							<ul class="navigation navigation-main navigation-accordion">
