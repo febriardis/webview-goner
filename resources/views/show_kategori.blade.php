@@ -15,7 +15,7 @@
 				<div class="panel">
 					<div style="display: none;">
 					{{ $getGm = (App\Barang::where('kategori_id', $tb->id)->inRandomOrder()->limit(1)->first()) }}</div>
-			    	@if(!$getGm)
+			    	@if(count($getGm)==0) 
 		           		<img src="/assets/images/placeholder.jpg" style="width: 100%; height: 150px" alt="">
 		           	@else
 		           		<img src="{{ url('uploads/file/'.$getGm->foto) }}" style="width: 100%; height: 150px" alt="">
